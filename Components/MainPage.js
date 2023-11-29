@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -10,75 +10,63 @@ import {
   Alert,
 } from 'react-native';
 
-const NewAnnTextInput = props => {
-  return (
-    <TextInput
-      style={{ fontSize: 15, textAlignVertical: 'top', color: 'black' }}
-      {...props}
-      editable
-      maxLength={500}
-    />
-  );
-};
+
 
 const MainPage = ({navigation}) => {
+  return (
+    <View
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 20,
+        marginRight: 20,
+        flex: 1,
+        marginTop: 20,
+      }}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('AdminScreen')}
+        // onPress={() => handleAddItem()}
+        style={{
+          width: '100%',
+          height: 50,
+          backgroundColor: '#184191',
 
-
-    return(
-        <View
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text
           style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginLeft:20,
-            marginRight:20,
-            flex:1,
-            marginTop: 20,
+            fontSize: 18,
+            color: 'white',
+            fontWeight: 'bold',
           }}>
-          <TouchableOpacity onPress={()=>navigation.navigate('Part1')}
-            // onPress={() => handleAddItem()}
-            style={{
-              width: '100%',
-              height: 50,
-              backgroundColor: '#184191',
-             
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Text
-              style={{
-                fontSize: 18,
-                color: 'white',
-                fontWeight: 'bold',
-              }}>
-             Part 1
-            </Text>
-          </TouchableOpacity>
+         Admin Screen
+        </Text>
+      </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=>navigation.navigate('Part2')}
-            // onPress={() => handleAddItem()}
-            style={{
-              width: '100%',
-              height: 50,
-              backgroundColor: '#184191',
-             
-              marginTop:50,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-            <Text
-              style={{
-                fontSize: 18,
-                color: 'white',
-                fontWeight: 'bold',
-              }}>
-           Part 2
-            </Text>
-          </TouchableOpacity>
-        </View>
-      
-    )
-    
-  
+      <TouchableOpacity
+        onPress={() => navigation.navigate('UserScreen')}
+        // onPress={() => handleAddItem()}
+        style={{
+          width: '100%',
+          height: 50,
+          backgroundColor: '#184191',
+
+          marginTop: 50,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text
+          style={{
+            fontSize: 18,
+            color: 'white',
+            fontWeight: 'bold',
+          }}>
+         User Screen
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

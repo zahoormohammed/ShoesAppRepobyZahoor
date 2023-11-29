@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -6,35 +6,40 @@ import {
   TextInput,
   FlatList,
   Button,
+ 
   StyleSheet,
   Alert,
 } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import UserScreen from './Components/UserScreen';
+import AdminScreen from './Components/AdminScreen';
 
-import Part1 from './Components/Part1';
-import Part2 from './Components/Part2';
+
 import MainPage from './Components/MainPage';
 const Stack = createStackNavigator();
-const NewAnnTextInput = props => {
-  return (
-    <TextInput
-      style={{ fontSize: 15, textAlignVertical: 'top', color: 'black' }}
-      {...props}
-      editable
-      maxLength={500}
-    />
-  );
-};
 
 const App = () => {
   return (
+   
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         {/* Define screens using Stack.Screen */}
-        <Stack.Screen options={{headerShown: false}} name="MainPage" component={MainPage} />
-        <Stack.Screen options={{headerShown: false}} name="Part1" component={Part1} />
-        <Stack.Screen options={{headerShown: false}} name="Part2" component={Part2} />
+        <Stack.Screen
+          options={{headerShown: false}}
+          name="MainPage"
+          component={MainPage}
+        />
+        <Stack.Screen
+          options={{headerShown: false}}
+          name="AdminScreen"
+          component={AdminScreen}
+        />
+        <Stack.Screen
+          options={{headerShown: false}}
+          name="UserScreen"
+          component={UserScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

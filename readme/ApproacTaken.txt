@@ -1,0 +1,54 @@
+Shoes App - Development Approach
+To create the Shoes App, I followed a step-by-step approach, using React Native to build a functional application. Below is a summary of the key steps and decisions made during the development process:
+
+Project Initialization:
+
+Set up a new React Native project using the react-native init command.
+Installed necessary dependencies, including React Navigation for navigation between screens.
+File Structure:
+
+Created a clear and organized file structure to separate components, screens, and utilities.
+Implemented two main screens: AdminScreen for administrative tasks and UserScreen for regular users.
+Navigation Setup:
+
+Configured React Navigation to facilitate navigation between different screens.
+Utilized stack navigation for a seamless transition between the admin and user screens.
+Data Storage:
+
+Integrated AsyncStorage to locally store and retrieve shoe details.
+Stored the shoe details as an array in AsyncStorage for simplicity.
+Modal Implementation:
+
+Utilized React Native Modal component to create modal pop-ups for adding and editing shoe details.
+Displayed input fields within the modals to capture brand, size, cost, and description.
+FlatList for Display:
+
+Implemented a FlatList component to efficiently render the list of shoe items.
+Fetched and displayed shoe details from AsyncStorage using the useEffect hook.
+Delete and Edit Functionality:
+
+Provided a delete button for each item in the list to remove unwanted shoe details.
+Implemented an edit button to open a modal pre-filled with the selected shoe details for modification.
+Allowed users to edit and save changes to the existing shoe details.
+User Input Validation:
+
+Ensured that the required fields (brand, size, cost, and description) are not empty before adding or editing shoe details.
+Displayed an alert if any of the required fields are missing.
+Alerts for User Interaction:
+
+Used the React Native Alert component to provide informative messages to users.
+Showed alerts for successful actions, such as adding, editing, and deleting shoe details.
+Efficient Rendering:
+
+Implemented a FlatList to efficiently render the list of shoe items, optimizing performance.
+Code Cleanup and Styling:
+
+Maintained clean and readable code by removing unnecessary comments and console logs.
+Applied basic styling to enhance the visual presentation of the screens.
+Testing:
+
+Created a simple test using Jest and React Test Renderer to ensure that the main App component renders correctly.
+GitHub Repository:
+
+Set up a GitHub repository to version control the project and facilitate collaboration.
+By following this approach, the Shoes App was successfully developed to allow users to add, edit, and delete shoe details with a straightforward user interface. Further improvements can be made to enhance the app's features, UI design, and overall user experience.

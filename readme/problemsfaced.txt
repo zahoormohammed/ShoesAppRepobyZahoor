@@ -1,0 +1,5 @@
+There is an aspect that hasn't been implemented according to the requirements. I didn't enable users to upload shoe images due to time constraints. However, this functionality can be achieved by allowing users to pick pictures using the React Native Image Picker, storing the image in the temporary storage of the mobile device, and accessing it using React Native File System.
+
+Additionally, I must note that the design of the app may not meet high standards. My primary focus was on implementing the main logic, and I prioritized functionality over design to meet the given requirements within the time constraints.
+
+One challenge I encountered was managing the increment and decrement of the total cost value in the cart. Although it was a bit confusing at first, I was able to navigate through the complexities and arrive at a suitable solution.
