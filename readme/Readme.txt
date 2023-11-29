@@ -56,7 +56,7 @@ Clone the Repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/shoes-app.git
+git clone https://github.com/zahoormohammed/ShoesAppRepobyZahoor.git
 Navigate to the Project Directory:
 
 bash
@@ -69,9 +69,7 @@ Copy code
 npm install
 or
 
-bash
-Copy code
-yarn install
+
 Running the App
 Android
 Start an Android Emulator or Connect a Physical Device:
@@ -82,14 +80,6 @@ Run the App:
 bash
 Copy code
 npx react-native run-android
-This command will bundle the app and install it on the connected Android device or emulator.
-
-Install Cocoapods:
-Run the App:
-
-bash
-npx react-native run-ios
-This command will build and run the app on the connected iOS simulator or device.
 
 Usage
 Admin Dashboard:
