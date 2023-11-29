@@ -210,15 +210,17 @@ const AdminScreen = ({navigation}) => {
 
   return (
     <View>
-      <ScrollView
-        style={{backgroundColor: 'white'}}
-        keyboardShouldPersistTaps="always">
+     
         <Modal
           animationType="fade"
           useNativeDriver={true}
           onRequestClose={() => setModalOpen(false)}
           visible={modalOpen}>
-          <View>
+
+            <ScrollView>
+
+           
+          <View style={{marginBottom:100}}>
             <View
               style={{
                 flexDirection: 'row',
@@ -369,6 +371,7 @@ const AdminScreen = ({navigation}) => {
                 style={{
                   width: '90%',
                   height: 50,
+                  marginBottom:200,
                   marginLeft: 20,
                   marginRight: 20,
                   backgroundColor: '#184191',
@@ -387,19 +390,22 @@ const AdminScreen = ({navigation}) => {
               </TouchableOpacity>
             </View>
           </View>
+          </ScrollView>
         </Modal>
-      </ScrollView>
+      
 
    
 
-      <ScrollView
-        style={{backgroundColor: 'white'}}
-        keyboardShouldPersistTaps="always">
+     
         <Modal
           animationType="fade"
           useNativeDriver={true}
           onRequestClose={() => seteditmodal(false)}
           visible={editmodal}>
+
+<ScrollView
+        style={{backgroundColor: 'white'}}
+        keyboardShouldPersistTaps="always">
           <View>
             <View
               style={{
@@ -568,8 +574,9 @@ const AdminScreen = ({navigation}) => {
               </TouchableOpacity>
             </View>
           </View>
+          </ScrollView>
         </Modal>
-      </ScrollView>
+ 
 
       <View>
         <View
