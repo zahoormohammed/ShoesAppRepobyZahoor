@@ -9,6 +9,7 @@ import {
   StyleSheet,
   Modal,
   ScrollView,
+  Image,
   Alert,
   Keyboard,
 } from 'react-native';
@@ -81,13 +82,14 @@ const Part2 = () => {
 
   const renderItem = ({item, index}) => (
     <View style={styles.cardContainer}>
-      <Text style={styles.brandText}>{`Brand: ${item.brand}`}</Text>
-      <Text style={styles.sizeText}>{`Size: ${item.size}`}</Text>
-      <Text style={styles.costText}>{`Cost: ${item.cost}`}</Text>
-      <Text
-        style={
-          styles.descriptionText
-        }>{`ShoesDetails: ${item.descriptionText}`}</Text>
+      <View style={{alignItems:'center'}}>
+      <Image style={{width:150, height:150, alignItems:'center'}} source={{uri:item.imageUri}} />
+      <Text style={styles.brandText}>{`${item.brand}`}</Text>
+      <Text style={styles.sizeText}>{`Size Available: ${item.size}`}</Text>
+      <Text style={styles.costText}>{`₹${item.cost}`}</Text>
+      </View>
+      
+      
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           onPress={() => addToCart(item, index)}
@@ -147,12 +149,20 @@ const Part2 = () => {
         marginTop: 30,
       }}>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <Text
+     
+      <View style={{flexDirection:'row'}}>
+      <Image style={{width:50, height:50, alignItems:'center'}} source={{uri:item.imageUri}} />
+      <Text
           style={{
             fontWeight: 'bold',
+            marginTop:10,
+            marginLeft:20,
             fontSize: RFValue(17),
             color: 'black',
           }}>{`${item.brand}`}</Text>
+      </View>
+      
+       
 
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <Text
@@ -420,7 +430,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   costText: {
-    fontSize: RFValue(16),
+    fontSize: RFValue(20),
     color: 'black',
   },
   descriptionText: {

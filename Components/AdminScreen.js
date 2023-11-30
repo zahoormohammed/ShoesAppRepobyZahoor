@@ -7,6 +7,7 @@ import {
   FlatList,
   Button,
   StyleSheet,
+  Image,
   Modal,
   ScrollView,
   Alert,
@@ -21,6 +22,7 @@ import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 
 import Icon1 from 'react-native-vector-icons/MaterialIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 const ShoesDetailsTextInput = props => {
   return (
     <TextInput
@@ -67,12 +69,28 @@ const AdminScreen = ({navigation}) => {
       const existingData = await AsyncStorage.getItem('shoeDetails');
 
       const existingArray = existingData ? JSON.parse(existingData) : [];
+      const imageUris = [
+        'https://tinyurl.com/yr86vjd7',
+        'https://tinyurl.com/2mcuk7b9',
+        'https://tinyurl.com/v3mvh2x9',
+        'https://tinyurl.com/3tzxx8b5',
+        'https://tinyurl.com/3u48csr7',
+        'https://tinyurl.com/3p5j332k',
+        'https://tinyurl.com/mvh2sw6m',
+
+
+        
+      ];
+      const randomImageUri = imageUris[Math.floor(Math.random() * imageUris.length)];
+      const imageUri =
+      existingArray.length === 0 ? imageUris[0] : existingArray[0].imageUri;
 
       const newShoe = {
         brand,
         size,
         cost,
         descriptionText,
+        imageUri: randomImageUri,
       };
 
       existingArray.push(newShoe);
@@ -160,15 +178,23 @@ const AdminScreen = ({navigation}) => {
     seteditmodal(true);
   };
 
+
+  
+
   const renderItem = ({item, index}) => (
     <View style={styles.cardContainer}>
-      <Text style={styles.brandText}>{`Brand: ${item.brand}`}</Text>
+      <View style={{alignItems:'center'}}>
+      <Image style={{width:150, height:150, alignItems:'center'}} source={{uri:item.imageUri}} />
+      </View>
+      
+      <View style={{alignItems:'center'}}>
+      <Text style={styles.brandText}>{`${item.brand}`}</Text>
       <Text style={styles.sizeText}>{`Size Available: ${item.size}`}</Text>
-      <Text style={styles.costText}>{`Cost: ${item.cost}`}</Text>
-      <Text
-        style={
-          styles.descriptionText
-        }>{`ShoesDetails: ${item.descriptionText}`}</Text>
+      <Text style={styles.costText}>{`₹${item.cost}`}</Text>
+      
+     
+      </View>
+     
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           onPress={() =>
@@ -669,7 +695,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   costText: {
-    fontSize: RFValue(15),
+    fontSize: RFValue(20),
     color: 'black',
   },
   descriptionText: {
