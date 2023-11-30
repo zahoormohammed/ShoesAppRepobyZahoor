@@ -46,6 +46,7 @@ const AdminScreen = ({navigation}) => {
     ]);
   }
 
+  const[imageuriforedit,setimageuriforedit] = useState("");
   const [indexforedit, setindexforedit] = useState('');
   const [editbrand, seteditbrand] = useState('');
   const [editsize, seteditsize] = useState('');
@@ -102,7 +103,6 @@ const AdminScreen = ({navigation}) => {
       setonChangesize('');
       setonChangecost('');
       setdescriptionText('');
-
       fetchShoeDetails();
     }
   };
@@ -119,6 +119,7 @@ const AdminScreen = ({navigation}) => {
           size: editsize,
           cost: editcost,
           descriptionText: editshoedetails,
+          imageUri:imageuriforedit,
         };
 
         setShoeData(updatedData);
@@ -168,13 +169,13 @@ const AdminScreen = ({navigation}) => {
     setItems(updatedItems);
   };
 
-  const EditFunction = (index, brand, size, cost, description) => {
+  const EditFunction = (index, brand, size, cost, description,imageuri1) => {
     seteditbrand(brand);
     seteditsize(size);
     seteditcost(cost);
     seteditshoesdetails(description);
     setindexforedit(index);
-
+    setimageuriforedit(imageuri1)
     seteditmodal(true);
   };
 
@@ -204,6 +205,7 @@ const AdminScreen = ({navigation}) => {
               item.size,
               item.cost,
               item.descriptionText,
+              item.imageUri
             )
           }
           style={styles.editButton}>
